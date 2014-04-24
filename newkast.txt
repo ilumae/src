@@ -1,0 +1,40 @@
+	//kohe tkoht muutuja alla tegin skoht - syndmuskoht, kus peaksid syndmused jooksma
+	static Text tkoht= new Text(10.0, 400.0, "kirjeldus");
+	static Text skoht=new Text(10.0, 400.0, "mis siin sünnib?");
+	
+	//stseeni tegin suuremaks
+		Scene stseen1 = new Scene(juur, 380, 676, Color.WHITE);
+		
+ //kõik põhimuutused siin, nimetasin vana kasti ümber ja tegin uue kasti kasts nagu kast syndmus:
+ //See kast, kuhu info kuvatakse
+		Image image=new Image("application/paber_taust.jpg");
+		Rectangle kastl=new Rectangle(0, 400, 550, 125);
+		kastl.setFill(new ImagePattern(image, 0, 0, 1,1, true));
+		StackPane.setAlignment(tkoht, Pos.CENTER_LEFT);
+		StackPane.setAlignment(skoht, Pos.CENTER_LEFT);
+		Rectangle kasts=new Rectangle(0, 525, 550, 125);
+		kasts.setFill(new ImagePattern(image, 0, 0, 1,1, true));
+
+		
+
+		Pane panec=new Pane();
+		Pane panea=new Pane();
+		Pane paneb=new Pane();
+
+		panec.getChildren().add(canvas);
+		panea.getChildren().add(sp1);
+		paneb.getChildren().add(sp2);
+		panea.setLayoutX(0);
+		panea.setLayoutY(525);
+		paneb.setLayoutX(0);
+		paneb.setLayoutY(400);
+		piir.setTop(panec);
+		sp1.getChildren().addAll(kastl, tkoht);
+		sp2.getChildren().addAll(kasts, skoht);
+		
+
+		tekstivali.setLayoutX(10.0);
+		tekstivali.setLayoutY(652.0);
+
+
+		juur.getChildren().addAll(piir, tekstivali, panec, panea, paneb);
